@@ -7,6 +7,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <div class="wrapper">
     <nav>
       <RouterLink to="/">Libros</RouterLink>
+      <RouterLink to="/nuevo-libro">Nuevo Libro</RouterLink>
     </nav>
   </div>
 </header>
