@@ -59,17 +59,17 @@ export default {
             </thead>
             <tbody>
                 <tr v-for="libro in libros" key="libro.id">
-                    <td>{{ libro.id }}</td>
+                    <td class="alinear">{{ libro.id }}</td>
                     <td>{{ libro.titulo }}</td>
                     <td>{{ libro.ISBN }}</td>
                     <td>{{ libro.genero }}</td>
-                    <td>{{ libro.precio }}</td>
+                    <td class="alinear">{{ libro.precio }}</td>
                     <td>{{ libro.disponibilidad }}</td>
-                    <div>
-                        <button @click="eliminarLibro(libro.id, libro.titulo)">
+                    <div class="botones">
+                        <button class="btn eliminar" @click="eliminarLibro(libro.id, libro.titulo)">
                             Eliminar
                         </button>
-                        <RouterLink :to="{path: 'editarLibro/'+libro.id}">Editar</RouterLink>
+                        <RouterLink class="btn editar" :to="{path: 'editarLibro/'+libro.id}">Editar</RouterLink>
                     </div>
                 </tr>
             </tbody>
@@ -77,4 +77,64 @@ export default {
     </main>
 </template>
 
-<style></style>
+<style scoped>
+    table{
+        width: 90%;
+        border-collapse: collapse;
+        margin: 10px auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+    }
+    
+    th, td {
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #a5a2a2;
+    }
+    .alinear{
+        text-align: center;
+    }
+
+    .botones{
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid #000;
+        padding: 10px;
+    }
+    .btn{
+        background-color: transparent;
+        border: none;
+        padding: 10px 15px;
+        text-decoration: none;
+        font-family: "Montserrat";
+        color: #000;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        margin: 5px;
+    }
+
+    .eliminar{
+        background-color: #f44336;
+        color: #fff;
+        
+    }
+
+    .eliminar:hover{
+        background-color: #d32f2f;
+    }
+
+    .editar{
+        background-color: #4caf50;
+        color: #fff;
+        
+    }
+
+    .editar:hover{
+        background-color: #45a049;
+    }
+</style>
