@@ -21,7 +21,7 @@ export default {
             const confirmDelete = window.confirm(`Estás seguro de eliminar el libro ${titulo}`);
             if (confirmDelete) {
                 try {
-                    await axios.delete(`http://localhost:3000/libros${id}`);
+                    await axios.delete(`http://localhost:3000/libros/${id}`);
                     listarLibros();
                 } catch (error) {
                     console.log("Error al eliminar el libro", error)
@@ -59,6 +59,7 @@ export default {
             </thead>
             <tbody>
                 <tr v-for="libro in libros" key="libro.id">
+                    <td>{{ libro.id }}</td>
                     <td>{{ libro.titulo }}</td>
                     <td>{{ libro.ISBN }}</td>
                     <td>{{ libro.genero }}</td>
@@ -68,7 +69,7 @@ export default {
                         <button @click="eliminarLibro(libro.id, libro.titulo)">
                             Eliminar
                         </button>
-                        <RouterLink :to="{path: '/editarLibro/'+libro.id}"></RouterLink>
+                        <RouterLink :to="{path: 'editarLibro/'+libro.id}">Editar</RouterLink>
                     </div>
                 </tr>
             </tbody>

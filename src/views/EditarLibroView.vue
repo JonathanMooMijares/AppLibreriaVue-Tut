@@ -7,7 +7,7 @@ export default {
     setup() {
         const router = useRouter();
         const editarLibro = ref({
-            id: NULL,
+            id: null,
             titulo: '',
             autor: '',
             ISBN: '',
@@ -60,27 +60,27 @@ export default {
             <div>
                 <div>
                     <label for="titulo"></label>
-                    <input name="titulo" v-mode="editarLibro.titulo" type="text" placeholder="Titulo">
+                    <input name="titulo" v-model="editarLibro.titulo" type="text" placeholder="Titulo">
                 </div>
                 <div>
                     <label for="autor"></label>
-                    <input name="autor" v-mode="editarLibro.autor" type="text" placeholder="Autor">
+                    <input name="autor" v-model="editarLibro.autor" type="text" placeholder="Autor">
                 </div>
                 <div>
                     <label for="ISBN"></label>
-                    <input name="ISBN" v-mode="editarLibro.ISBN" type="text" placeholder="ISBN">
+                    <input name="ISBN" v-model="editarLibro.ISBN" type="text" placeholder="ISBN">
                 </div>
                 <div>
                     <label for="genero"></label>
-                    <input name="genero" v-mode="editarLibro.genero" type="text" placeholder="Género">
+                    <input name="genero" v-model="editarLibro.genero" type="text" placeholder="Género">
                 </div>
                 <div>
                     <label for="precio"></label>
-                    <input name="precio" v-mode="editarLibro.precio" type="text" placeholder="Precio">
+                    <input name="precio" v-model="editarLibro.precio" type="text" placeholder="Precio">
                 </div>
                 <div>
                     <label for="disponibilidad"></label>
-                    <input name="disponibilidad" v-mode="editarLibro.disponibilidad" type="text"
+                    <input name="disponibilidad" v-model="editarLibro.disponibilidad" type="text"
                         placeholder="Disponibilidad">
                 </div>
 

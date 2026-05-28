@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Libros from '../views/LibrosView.vue'
+import LibrosView from '../views/LibrosView.vue';
 
 
 const router = createRouter({

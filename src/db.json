@@ -1,31 +1,50 @@
 {
-    "libros": [
-        {
-            "id": "1",
-            "titulo": "primer libro",
-            "autor": "JonathanMoo",
-            "ISBN": "123456789",
-            "genero": "ficcion",
-            "precio": "1 USD",
-            "disponibilidad": true
-        },
-        {
-            "id": "2",
-            "titulo": "primer libro",
-            "autor": "JonathanMoo",
-            "ISBN": "123456789",
-            "genero": "ficcion",
-            "precio": "1 USD",
-            "disponibilidad": true
-        },
-        {
-            "id": "3",
-            "titulo": "primer libro",
-            "autor": "JonathanMoo",
-            "ISBN": "123456789",
-            "genero": "ficcion",
-            "precio": "1 USD",
-            "disponibilidad": true
-        }
-    ]
+  "libros": [
+    {
+      "id": "1",
+      "titulo": "primer libro",
+      "autor": "JonathanMoo",
+      "ISBN": "123456789",
+      "genero": "ficcion",
+      "precio": "1 USD",
+      "disponibilidad": true
+    },
+    {
+      "id": "2",
+      "titulo": "primer libro",
+      "autor": "JonathanMoo",
+      "ISBN": "123456789",
+      "genero": "ficcion",
+      "precio": "1 USD",
+      "disponibilidad": true
+    },
+    {
+      "id": "3",
+      "titulo": "primer libro",
+      "autor": "JonathanMoo",
+      "ISBN": "123456789",
+      "genero": "ficcion",
+      "precio": "1 USD",
+      "disponibilidad": true
+    },
+    {
+      "titulo": "44",
+      "autor": "4",
+      "ISBN": "4",
+      "genero": "4",
+      "precio": "4",
+      "disponibilidad": "4",
+      "id": "6hcpi89x6RE"
+    },
+    {
+      "titulo": "5",
+      "autor": "55",
+      "ISBN": "5",
+      "genero": "5",
+      "precio": "5",
+      "disponibilidad": "5",
+      "id": "geINXlJ5lCQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
