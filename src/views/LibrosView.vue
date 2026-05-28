@@ -68,6 +68,7 @@ export default {
                         <button @click="eliminarLibro(libro.id, libro.titulo)">
                             Eliminar
                         </button>
+                        <RouterLink :to="{path: '/editarLibro/'+libro.id}"></RouterLink>
                     </div>
                 </tr>
             </tbody>
