@@ -1,0 +1,31 @@
+{
+    "libros": [
+        {
+            "id": "1",
+            "titulo": "primer libro",
+            "autor": "JonathanMoo",
+            "ISBN": "123456789",
+            "genero": "ficcion",
+            "precio": "1 USD",
+            "disponibilidad": true
+        },
+        {
+            "id": "2",
+            "titulo": "primer libro",
+            "autor": "JonathanMoo",
+            "ISBN": "123456789",
+            "genero": "ficcion",
+            "precio": "1 USD",
+            "disponibilidad": true
+        },
+        {
+            "id": "3",
+            "titulo": "primer libro",
+            "autor": "JonathanMoo",
+            "ISBN": "123456789",
+            "genero": "ficcion",
+            "precio": "1 USD",
+            "disponibilidad": true
+        }
+    ]
+}

@@ -3,31 +3,47 @@ import axios from 'axios';
 import { ref, onMounted } from 'vue';
 
 export default {
-    setup(){
+    setup() {
+        
+
+        const libros = ref([]);
+
+        const listarLibros = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/libros');
+                libros.value = response.data;
+            } catch (error) {
+                console.log("Error al listar libros", error)
+            }
+        };
+
+        const eliminarLibro = async (id, titulo) => {
+            const confirmDelete = window.confirm(`Estás seguro de eliminar el libro ${titulo}`);
+            if (confirmDelete) {
+                try {
+                    await axios.delete(`http://localhost:3000/libros${id}`);
+                    listarLibros();
+                } catch (error) {
+                    console.log("Error al eliminar el libro", error)
+                }
+            }
+        }
+
         onMounted(() => {
             listarLibros();
         });
 
-        const libros = ref([]);
-
-        const listarLibros = async () =>{
-            try{
-                const response = await axios.get('http://localhost:3000/libros');
-                libros.value = response.data;
-            }catch(error){
-                console.log("Error al listar libros", error)
-            }
-        }
-
         return {
             libros,
+            listarLibros, 
+            eliminarLibro
         }
     }
 }
 </script>
 
 <template>
-    
+
     <main>
         <table>
             <thead>
@@ -38,7 +54,7 @@ export default {
                     <th>Género</th>
                     <th>Precio</th>
                     <th>Disponibilidad</th>
-                    <th>Acciones</th>                
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,10 +62,10 @@ export default {
                     <td>{{ libro.titulo }}</td>
                     <td>{{ libro.ISBN }}</td>
                     <td>{{ libro.genero }}</td>
-                    <td>{{ libro.precio}}</td>
+                    <td>{{ libro.precio }}</td>
                     <td>{{ libro.disponibilidad }}</td>
                     <div>
-                        <button @click="">
+                        <button @click="eliminarLibro(libro.id, libro.titulo)">
                             Eliminar
                         </button>
                     </div>
@@ -59,5 +75,4 @@ export default {
     </main>
 </template>
 
-<style>
-</style>
+<style></style>
